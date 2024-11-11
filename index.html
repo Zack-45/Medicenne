@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Médicenne - QCM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="#addQCM">Ajouter des QCMs</a></li>
+      <li><a href="#takeQCM">Faire des QCMs</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <!-- Onglet Ajouter des QCMs -->
+    <div id="addQCM" class="tab-content">
+      <h2>Ajouter un QCM</h2>
+      <form id="questionForm">
+        <label for="qcmType">Type de question :</label>
+        <select id="qcmType" name="qcmType">
+          <option value="QCM">QCM (Choix multiple)</option>
+          <option value="QCS">QCS (Choix simple)</option>
+        </select>
+
+        <label for="ue">Banque de questions (UE) :</label>
+        <select id="ue" name="ue">
+          <option value="neuro-sensoriel">UE Système Neuro-Sensoriel</option>
+          <option value="cardio-vasculaire">UE Système Cardio-Vasculaire</option>
+        </select>
+
+        <div id="questionInputs">
+          <label for="questionText">Question :</label>
+          <input type="text" id="questionText" name="questionText" required>
+
+          <div class="answers">
+            <label for="answer1">Réponse 1:</label>
+            <input type="text" id="answer1" name="answer1" required>
+            <input type="checkbox" name="correctAnswer1"> Vrai
+          </div>
+
+          <div class="answers">
+            <label for="answer2">Réponse 2:</label>
+            <input type="text" id="answer2" name="answer2" required>
+            <input type="checkbox" name="correctAnswer2"> Vrai
+          </div>
+
+          <div class="answers">
+            <label for="answer3">Réponse 3:</label>
+            <input type="text" id="answer3" name="answer3" required>
+            <input type="checkbox" name="correctAnswer3"> Vrai
+          </div>
+
+          <div class="answers">
+            <label for="answer4">Réponse 4:</label>
+            <input type="text" id="answer4" name="answer4" required>
+            <input type="checkbox" name="correctAnswer4"> Vrai
+          </div>
+
+          <div class="answers">
+            <label for="answer5">Réponse 5:</label>
+            <input type="text" id="answer5" name="answer5" required>
+            <input type="checkbox" name="correctAnswer5"> Vrai
+          </div>
+
+          <button type="submit">Ajouter Question</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Onglet Faire des QCMs -->
+    <div id="takeQCM" class="tab-content">
+      <h2>Faire un QCM</h2>
+      <form id="answerForm">
+        <!-- Les questions seront ajoutées ici dynamiquement -->
+        <div id="questionsList"></div>
+        <button type="submit">Soumettre Réponses</button>
+      </form>
+      <div id="score"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
